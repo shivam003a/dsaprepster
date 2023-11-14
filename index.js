@@ -24,11 +24,6 @@ const PORT = process.env.PORT || 5000
 // Database Connection
 connectDB()
 
-// Defualt Route
-app.get('/', (req, res)=>{
-    response(res, 200, true, null, "Welcome to the API")
-})
-
 // serving the frontend
 app.use(express.static(path.join(__dirname, './client/build')))
 app.get("*", function(_, res){
