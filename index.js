@@ -5,7 +5,7 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const response = require('./supporters/response')
 const connectDB = require('./config/database')
-import path from 'path'
+var path = require('path')
 
 // Instantiating Express
 const app = express()
