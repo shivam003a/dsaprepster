@@ -24,21 +24,22 @@ const PORT = process.env.PORT || 5000
 // Database Connection
 connectDB()
 
-// serving the frontend
-app.use(express.static(path.join(__dirname, './client/build')))
-app.get("*", function(_, res){
-    res.sendFile(
-        path.join(__dirname, './client/build/index.html'),
-        function(err){
-            res.status(500).send(err)
-        }
-    )
-})
-
 // Routes
 app.use('/api/v1', require('./routes/router'))
 
+// serving the frontend
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function (_, res) {
+    res.sendFile(
+        path.join(__dirname, "./client/build/index.html"),
+        function (err) {
+            res.status(500).send(err);
+        }
+    );
+});
+
+
 // Listening to port
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
