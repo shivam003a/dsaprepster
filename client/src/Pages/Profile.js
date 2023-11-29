@@ -51,7 +51,7 @@ const Profile = () => {
     });
 
     const chartData = {
-        labels: Object.keys(topicCounts),
+        labels: Object.keys(topicCounts).map(topic => `${topic} (${topicCounts[topic]})`),
         datasets: [
             {
                 data: Object.values(topicCounts),
@@ -86,7 +86,7 @@ const Profile = () => {
                                 <span>PieChart</span>
                             </div>
                             <div className='pieChart'>
-                                <PieChart data={chartData} />
+                            <PieChart data={chartData} options={{ legend: { display: true } }} />
                             </div>
                         </div>
                         <div className='profileInfo3'>
