@@ -13,6 +13,8 @@ const Dashboard = () => {
     const [solved, setSolved] = useState([])
     const [topics, setTopics] = useState([])
 
+    const topicList = ['Array', 'Matrix', 'String', 'Searching & Sorting', 'LinkedList', 'Binary Trees', 'Binary Search Trees', 'Greedy', 'BackTracking', 'Stacks & Queues', 'Heap', 'Graph', 'Dynamic Programming', 'Bit Manipulation', 'Trie']
+
     const getQuestionsList = async () => {
         setLoading(true)
 
@@ -72,7 +74,7 @@ const Dashboard = () => {
 
     const getFiltered = async (e) => {
         const topic = e.target.innerText
-        try{
+        try {
 
             const res = await fetch(`/api/v1/get-questions/${topic}`, {
                 method: "GET",
@@ -84,7 +86,7 @@ const Dashboard = () => {
 
             const data = await res.json();
             setQuestion(data.data)
-        }catch(err){
+        } catch (err) {
             console.log(err)
         }
     }
@@ -111,21 +113,22 @@ const Dashboard = () => {
                         <div className='filter'>
                             <div className='filterby'>Filter By:</div>
                             <div className='topic'>
-                                <span onClick={getFiltered}>Array</span>
-                                <span onClick={getFiltered}>Linked List</span>
-                                <span onClick={getFiltered}>Trees</span>
-                                <span onClick={getFiltered}>Graph</span>
-                                <span onClick={getFiltered}>Stack</span>
-                                <span onClick={getFiltered}>Queue</span>
-                                <span onClick={getFiltered}>String</span>
-                                <span onClick={()=>getQuestionsList()}>All</span>
+                                {
+                                    topicList.map(topic => {
+                                        return (
+                                            <span onClick={getFiltered}>{topic}</span>
+                                        )
+                                    })
+                                }
+
+                                <span onClick={() => getQuestionsList()}>All</span>
                             </div>
                             <div className='topic'>
                                 <span onClick={getFiltered}>Basic</span>
                                 <span onClick={getFiltered}>Easy</span>
                                 <span onClick={getFiltered}>Medium</span>
                                 <span onClick={getFiltered}>Hard</span>
-                                <span onClick={()=> getQuestionsList()}>All</span>
+                                <span onClick={() => getQuestionsList()}>All</span>
                             </div>
                         </div>
                     </div>

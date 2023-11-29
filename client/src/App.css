@@ -702,6 +702,8 @@ footer {
 
 .questionList {
   width: 70%;
+  height: 100vh;
+  overflow-y: scroll;
   background-color: #fccb5a;
   display: flex;
   flex-direction: column;
@@ -762,6 +764,7 @@ footer {
   color: #2a3796;
   font-weight: 600;
   letter-spacing: 1px;
+  text-transform: capitalize;
 }
 
 .question-details {
@@ -780,6 +783,7 @@ footer {
 
   .questionList {
     width: 100%;
+    height: unset;
   }
 
   .filter {

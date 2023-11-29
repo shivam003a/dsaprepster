@@ -30,7 +30,6 @@ const auth = async (req, res, next) => {
 
         if(userExist){
             req.user = userExist;
-            console.log("User Exist in auth")
             next();
         }
         else{
