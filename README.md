@@ -45,4 +45,5 @@ password: 12345
 ## Screenshots
 
 ![App Screenshot](https://github.com/shivam003a/dsaprepster/blob/22c876403845d07e523563fa0b51704d5b4d3ce6/samples/Screenshot%20(44).png)
-
+![App Screenshot](https://github.com/shivam003a/dsaprepster/blob/22c876403845d07e523563fa0b51704d5b4d3ce6/samples/Screenshot%20(44).png)
+![App Screenshot](https://github.com/shivam003a/dsaprepster/blob/22c876403845d07e523563fa0b51704d5b4d3ce6/samples/Screenshot%20(44).png)
